@@ -1,0 +1,43 @@
+body {
+  width: 663px;
+  font-family: Verdana, Helvetica, sans-serif;
+  line-height:1.6em;
+  background-color: #DDDDDD;
+  font-size: small;
+  text-align:center;
+  margin:0 auto;
+}
+
+h1{
+  font-size: 1.5em;
+  border-bottom:1px solid;
+}
+
+#wrapper{
+  text-align:left;
+}
+
+#footer{
+  font-size:x-small;
+  border-top:1px solid;
+  margin:5px 0;
+  text-align:center;
+}
+.l{
+	float:left;
+}
+.r{
+	float:right;
+	clear:right;
+}
+.c{
+	clear:both;
+}
+.hide{
+  display:none;
+}
+.code{
+  border:1px solid;
+  padding: 10px;
+  margin: 20px 0;
+}

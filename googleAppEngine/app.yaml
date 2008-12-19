@@ -1,0 +1,26 @@
+application: gui-cn
+version: 3
+runtime: python
+api_version: 1
+
+handlers:
+- url: /(.*\.html)
+  static_files: \1
+  upload: .*\.html
+  
+- url: /
+  static_files: index.html
+  upload: index.html
+
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /images
+  static_dir: images
+  
+- url: /javascripts
+  static_dir: javascripts
+ 
+
+- url: /.*
+  script: myApp.py
