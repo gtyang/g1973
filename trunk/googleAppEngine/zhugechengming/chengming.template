@@ -11,25 +11,25 @@
 			<p><a href="/">首页</a>|<a href="/guestbook">guest book</a>|<a href="/zhugechengming/cheng">诸葛亮称命法</a>|<a href="/DevNotes.html">开发手记</a></p>
 		</div>
         <h1>诸葛亮称命法</h1>
-	    <div id="desc" >
-			<div id="desc-txt" class="r">
-				<p>诸葛亮根据《易经》三百八四爻，所编写了签诗，巧妙地组成字盘供人卜算。其内容神秘而不可思议，小至个人荣辱，家庭得失，大至战役胜负，邦国荣衰，无不灵验如神。因此名声大震，代代相袭。明代后，该书被更名为《诸葛神薮》。</p>
-				<p>输入你的出生日期，根据诸葛亮呕心沥血研究出的运筹规则，可以称出你的“命”的重量，并有相应的签诗。</p>
-				<p>仅供娱乐，如果不理想不必太在意。三分天注定，七分靠打拼！</p>
+		<div id="desc-txt" class="r">
+			<p>诸葛亮根据《易经》三百八四爻，所编写了签诗，巧妙地组成字盘供人卜算。其内容神秘而不可思议，小至个人荣辱，家庭得失，大至战役胜负，邦国荣衰，无不灵验如神。因此名声大震，代代相袭。明代后，该书被更名为《诸葛神薮》。</p>
+			<p>输入你的出生日期，根据诸葛亮呕心沥血研究出的运筹规则，可以称出你的“命”的重量，并有相应的签诗。</p>
+			<p>仅供娱乐，如果不理想不必太在意。三分天注定，七分靠打拼！</p>
+		</div>
+		<div id="suan" class="l">
+			<form action="/zhugechengming/cheng" method="get">
+				<span>输入你的出生日期：<input type="text" name="y" size="4" value="{{y}}" title="输入年">年<input type="text" name="m" size="2" value="{{m}}"title="输入月">月<input type="text" name="d" size="2" value="{{d}}"title="输入日">日<input type="text" name="t" size="2" value="{{t}}"title="输入时间">点</span>
+				<span><input type="submit" value="称一称"></span>
+			</form>
+
+			<div id="result" {% if not weight %}class="hide"{% endif %}>
+			<p>你的命重:{{weight}}钱</p>
+			<p>诗曰：</p>
+			<p>{{shi}}</p>
 			</div>
-			<img src="../images/zhugeliang.jpg" />
 		</div>
-		<div id="bdate" class="c">
-		<form action="/zhugechengming/cheng" method="get">
-			<span>输入你的出生日期：<input type="text" name="y" size="4" value="{{y}}" title="输入年">年<input type="text" name="m" size="2" value="{{m}}"title="输入月">月<input type="text" name="d" size="2" value="{{d}}"title="输入日">日<input type="text" name="t" size="2" value="{{t}}"title="输入时间">点</span>
-			<span><input type="submit" value="称一称"></span>
-		</form>
-		</div>
-		<div id="result" {% if not weight %}class="hide"{% endif %}>
-		<p>你的命重:{{weight}}钱</p>
-		<p>诗曰：</p>
-		<p>{{shi}}</p>
-		</div>
-		<p id="footer">Power by Google App Engine. CopyRight 2008 - 2010，杨贵堂。</p>
+		<img src="../images/zhugeliang.jpg" />
+
+		<p id="footer c">Power by Google App Engine. CopyRight 2008 - 2010，杨贵堂。</p>
 	</body>
 </html>
