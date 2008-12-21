@@ -4,17 +4,13 @@ body {
   line-height:1.6em;
   background-color: #DDDDDD;
   font-size: small;
-  text-align:center;
+  padding:0 10px;
   margin:0 auto;
 }
 
 h1{
   font-size: 1.5em;
   border-bottom:1px solid;
-}
-
-#wrapper{
-  text-align:left;
 }
 
 #footer{
@@ -28,7 +24,7 @@ h1{
 }
 .r{
 	float:right;
-	clear:right;
+	clear:right;                           
 }
 .c{
 	clear:both;

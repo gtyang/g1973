@@ -4,7 +4,6 @@
     <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-  <div id="wrapper">
 	<p><a href="/">首页</a>|<a href="/guestbook">guest book</a>|<a href="/zhugechengming/cheng">诸葛亮称命法</a>|<a href="/DevNotes.html">开发手记</a></p>
     <div>
 	{% for greeting in greetings %}
@@ -24,6 +23,5 @@
     <a href="{{ url }}">{{ url_linktext }}</a>
 	</div>
 	<p id="footer">Power by Google App Engine. CopyRight 2008 - 2010，杨贵堂。</p>
-  </div>
   </body>
 </html>
