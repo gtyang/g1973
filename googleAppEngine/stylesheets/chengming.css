@@ -1,16 +1,5 @@
-#desc{
-}
-#desc-txt{
-	border: 1px solid;
-	width: 300px;
-	padding: 5px 15px;
-	margin: 25px;
-	line-height: 1.6em;
-	text-align:left;
-}
-#bdate{
-  padding:10px;
-}
-#result{
-  padding:10px
+#suan{
+	width:350px;
+	padding:10px;
+	margin:10px 263px 10px 10px;
 }
