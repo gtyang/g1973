@@ -19,6 +19,7 @@ h1{
   border-top:1px solid;
   margin:5px 0;
   text-align:center;
+  clear:both;
 }
 .l{
 	float:left;
