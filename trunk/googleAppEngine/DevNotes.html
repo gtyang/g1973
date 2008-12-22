@@ -39,11 +39,21 @@
 				- url: /.* <br />
 				  script: myApp.py <br />
 		</div>
-			另外，三点注意事项留下来备忘：
+			另外，四点注意事项留下来备忘：
 			<ol>
 				<li>用google提供的web模板框架的话，模板文件不能是静态文件，比如在我的设置中，所有的html文件都处理为静态文件，模板就不能用html作为后缀，我改成了.template，否则在开发环境正常运行，上传上去后就抱文件找不到的错误。</li>
 				<li>还有一个是作为python初学者犯的错误，一个目录要python认为是package的话，要有__init__.py文件，我一开始没有，import语句出错找了很久才找到原因。</li>
 				<li>http response缺省编码是utf-8，改为gbk的语句是:<div class="code">self.response.headers['Content-Type'] = 'text/html;charset=GBK'</div></li>
+                <li>在内网通过代理，appcfg.py上传出错，即使设置http_proxy和https_proxy，因为 python 有Bug。 here is how to apply the patch:
+                    <ol>
+                        <li>Download patch http://bugs.python.org/file9753/http-tunnel-urllib</li>
+                        <li>Open it (it is just a text file). For instance, rename it to http-tunnel-urllib.txt and open it with Wordpad.</li>
+                        <li>Let's say you installed Python in $PYTHON. So, edit $PYTHON/Lib/urllib2.py</li>
+                        <li>Remove/insert the lines as described with the -/+ signs in the first part of the patch. There are tools to do this automatically, but there are very few changes to perform here, so it is quickly done.</li>
+                        <li>Do the same with httplib.py</li>
+                        <li>That's it. Now try to upload your app as usual.</li>
+                    </ol>
+                </li>
 			</ol>
 		<p id="footer">Power by Google App Engine. CopyRight 2008 - 2010，杨贵堂。</p>
 	</body>
