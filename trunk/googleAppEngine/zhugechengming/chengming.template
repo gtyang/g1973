@@ -18,7 +18,7 @@
 		</div>
 		<div id="suan" class="l">
 			<form action="/zhugechengming/cheng" method="GET">
-				<span>输入你的出生日期：<input type="text" name="y" size="4" value="{{y}}" title="输入年">年<input type="text" name="m" size="2" value="{{m}}"title="输入月">月<input type="text" name="d" size="2" value="{{d}}"title="输入日">日<input type="text" name="t" size="2" value="{{t}}"title="输入时间">点</span>
+				<span>输入你的<strong>农历</strong>生日：<input type="text" name="y" size="4" value="{{y}}" title="输入年">年<input type="text" name="m" size="2" value="{{m}}"title="输入月">月<input type="text" name="d" size="2" value="{{d}}"title="输入日">日<input type="text" name="t" size="2" value="{{t}}"title="输入时间">点</span>
 				<span><input type="submit" value="称一称"></span>
 			</form>
 			<div id="result" {% if not weight %}class="hide"{% endif %}>
