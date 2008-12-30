@@ -2,9 +2,9 @@
 # 诸葛亮称命法V1.0
 
 def fyear(year):    #处理年份重量
-    if year<1941:
+    while year<1941:
         year=year+60
-    if year>2000:
+    while year>2000:
         year=year-60
     if year==1941:
         numy=6
