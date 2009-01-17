@@ -5,6 +5,20 @@
 		<meta http-equiv="content-type" content="text/html; charset=GBK" />   
 		<link type="text/css" rel="stylesheet" href="../stylesheets/main.css" />
 		<link type="text/css" rel="stylesheet" href="../stylesheets/chengming.css" />
+		<script type="text/javascript" src="../javascripts/lunar.js"></script>
+        <script type="text/javascript">
+			function suan(form){
+				var lunar = new Lunar(new Date(form["y"].value,form["m"].value - 1,form["d"].value));
+                var objDispLunar = document.getElementById("lunarbirthday");
+                objDispLunar.innerHTML = "你的阴历生日是" + lunar.year + "年" + lunar.month + "月" + lunar.day + "日";
+                form["ny"].value = lunar.year;
+                form["nm"].value = lunar.month;
+                form["nd"].value = lunar.day;
+                alert("what's that?")
+                form.submit();
+				return true;
+			}
+		</script>
     </head>
     <body>
 		<div>
@@ -12,14 +26,19 @@
 		</div>
         <h1>诸葛亮称命法</h1>
 		<div>
-			<p>诸葛亮根据《易经》三百八四爻，所编写了签诗，巧妙地组成字盘供人卜算。其内容神秘而不可思议，小至个人荣辱，家庭得失，大至战役胜负，邦国荣衰，无不灵验如神。因此名声大震，代代相袭。明代后，该书被更名为《诸葛神薮》。</p>
+			<p>诸葛亮根据《易经》三百八四爻，所编写了签诗，巧妙地组成字盘供人卜算。这种算命方法其内容神秘而不可思议，小至个人荣辱，家庭得失，大至战役胜负，邦国荣衰，无不灵验如神。因此名声大震，代代相袭。明代后，该书被更名为《诸葛神薮》。</p>
 			<p>输入你的出生日期，根据诸葛亮呕心沥血研究出的运筹规则，可以称出你的“命”的重量，并有相应的签诗。</p>
 			<p>仅供娱乐，如果不理想不必太在意。三分天注定，七分靠打拼！</p>
 		</div>
 		<div id="suan" class="l">
 			<form action="/zhugechengming/cheng" method="GET">
-				<span>输入你的<strong>农历</strong>生日：<input type="text" name="y" size="4" value="{{y}}" title="输入年">年<input type="text" name="m" size="2" value="{{m}}"title="输入月">月<input type="text" name="d" size="2" value="{{d}}"title="输入日">日<input type="text" name="t" size="2" value="{{t}}"title="输入时间">点</span>
-				<span><input type="submit" value="称一称"></span>
+				<span>输入你的生日：<input type="text" name="y" size="4" value="{{y}}" title="输入年">年
+				<input type="text" name="m" size="2" value="{{m}}"title="输入月">月
+				<input type="text" name="d" size="2" value="{{d}}"title="输入日">日
+				<input type="text" name="t" size="2" value="{{t}}"title="输入时间">点
+                <input type="hidden" name="ny" /><input type="hidden" name="nm" /><input type="hidden" name="nd" />
+				<input type="submit" value="称一称" onclick="suan(this.form)"></span>
+                <div id="lunarbirthday">{% if ny %}你的阴历生日是{{ny}}年{{nm}}月{{nd}}日{% endif %}</div>
 			</form>
 			<div id="result" {% if not weight %}class="hide"{% endif %}>
                 <p>你的命重:{{weight}}钱</p>

@@ -52,9 +52,12 @@ class ZhugeChengming(webapp.RequestHandler):
     y = self.request.get('y')
     m = self.request.get('m')
     d = self.request.get('d')
+    ny = self.request.get('ny')
+    nm = self.request.get('nm')
+    nd = self.request.get('nd')
     t = self.request.get('t')
-    if y.isdigit() and m.isdigit() and d.isdigit() and t.isdigit():
-      rslt = chengMing(y,m,d,t)
+    if ny.isdigit() and nm.isdigit() and nd.isdigit() and t.isdigit():
+      rslt = chengMing(ny,nm,nd,t)
 
       template_values = {
        'weight':rslt[0],
@@ -62,16 +65,22 @@ class ZhugeChengming(webapp.RequestHandler):
 	   'y':y,
 	   'm':m,
 	   'd':d,
+       'ny':ny,
+	   'nm':nm,
+	   'nd':nd,
 	   't':t
        }
     else:
       template_values = {
        'weight':'',
-       'shi':'',
+       'shi':'囧，我算不出您的命....ORZ',
 	   'y':y,
 	   'm':m,
 	   'd':d,
-	   't':t
+       'ny':ny,
+	   'nm':nm,
+	   'nd':nd,
+       't':t
        }
 
     path = os.path.join(os.path.dirname(__file__), 'zhugechengming/chengming.template')
