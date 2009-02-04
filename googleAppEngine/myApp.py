@@ -1,5 +1,5 @@
 # coding: gbk
-
+import logging
 import os
 from google.appengine.ext.webapp import template
 
@@ -21,6 +21,8 @@ class MainPage(webapp.RequestHandler):
   def get(self):
     greetings_query = Greeting.all().order('-date')
     greetings = greetings_query.fetch(10)
+    for g in greetings:
+        g.content = g.content.encode('GBK')
 
     if users.get_current_user():
       url = users.create_logout_url(self.request.uri)
@@ -35,17 +37,18 @@ class MainPage(webapp.RequestHandler):
       'url_linktext': url_linktext,
       }
     self.response.headers['Content-Type'] = 'text/html;charset=GBK'
-    path = os.path.join(os.path.dirname(__file__), 'index.template')
+    path = os.path.join(os.path.dirname(__file__), 'guestbook.template')
     self.response.out.write(template.render(path, template_values))
 	
 class Guestbook(webapp.RequestHandler):
   def post(self):
     greeting = Greeting()
 
+    self.request.charset = "GBK"
     if users.get_current_user():
       greeting.author = users.get_current_user()
 
-    greeting.content = self.request.get('content')
+    greeting.content = cgi.escape(self.request.get('content'))
     greeting.put()
     self.redirect('/guestbook')
 
