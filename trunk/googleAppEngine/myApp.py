@@ -93,10 +93,29 @@ class ZhugeChengming(webapp.RequestHandler):
     self.response.out.write(template.render(path, template_values))
 	
 	
+class JsonProcessor(webapp.RequestHandler):
+    def get(self):
+        y = self.request.get('y')
+        m = self.request.get('m')
+        d = self.request.get('d')
+        t = self.request.get('t')
+
+        if y.isdigit() and m.isdigit() and d.isdigit() and t.isdigit():
+            rslt = chengMing(y,m,d,t)
+        else:
+            rslt = [-1,"Input error!"]
+
+        self.response.headers['Content-Type'] = 'application/json'
+        self.response.out.write('{\n')
+        self.response.out.write('"weight":"' + str(rslt[0]) + '",\n')
+        self.response.out.write('"poem":"' + rslt[1] + '"\n')
+        self.response.out.write('}')
+
 application = webapp.WSGIApplication(
                                      [('/guestbook', MainPage),
                                       ('/sign', Guestbook),
-									  ('/zhugechengming/cheng',ZhugeChengming)],
+									  ('/zhugechengming/cheng',ZhugeChengming),
+                                      ('/jsonprocessor',JsonProcessor)],
                                      debug=True)
 									 
 def main():
