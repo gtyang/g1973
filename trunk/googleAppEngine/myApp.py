@@ -105,10 +105,11 @@ class JsonProcessor(webapp.RequestHandler):
         else:
             rslt = [-1,"Input error!"]
 
-        self.response.headers['Content-Type'] = 'application/json'
+        self.response.headers['Content-Type'] = 'application/json;charset=utf-8'
+        # self.response.headers['Content-Type'] = 'text/plain;charset=utf-8'
         self.response.out.write('{\n')
         self.response.out.write('"weight":"' + str(rslt[0]) + '",\n')
-        self.response.out.write('"poem":"' + rslt[1] + '"\n')
+        self.response.out.write('"poem":"' + unicode(rslt[1],"gbk") + '"\n')
         self.response.out.write('}')
 
 application = webapp.WSGIApplication(
