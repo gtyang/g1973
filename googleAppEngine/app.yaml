@@ -4,9 +4,8 @@ runtime: python
 api_version: 1
 
 handlers:
-- url: /(.*\.html)
-  static_files: \1
-  upload: .*\.html
+- url: /((characterIssue)|(DevNotes)).html
+  script: redirect.py
   
 - url: /
   static_files: index.html
