@@ -18,7 +18,7 @@ def fyear(year):    #处理年份重量
         1949: 7,
         1950: 9,
         1951: 12,
-        1952: 1,
+        1952: 10,
         1953: 7,
         1954: 15,
         1955: 6,
@@ -48,7 +48,7 @@ def fyear(year):    #处理年份重量
         1979: 6,
         1980: 8,
         1981: 16,
-        1982: 1,
+        1982: 10,
         1983: 7,
         1984: 12,
         1985: 9,
@@ -203,7 +203,13 @@ def chengMing(y,m,d,t):
           70:"此命推来福不轻，不须愁虑苦劳心，一生天定衣与禄，富贵荣华过一生",
           71:"此名生来大不同，公侯卿相在其中，一生自有逍遥福，富贵荣华极品隆",
           72:"此格世界罕有生，十代积善产此人，天上紫微来照命，统治万民乐太平"}
-    your_num = fyear(int(y)) + fmonth(int(m)) + fday(int(d)) + ftime(int(t))
+    im = int(m)
+    id = int(d)
+    it = int(t)
+    iy = int(y)
+    if im >12 or im < 1 or id > 30 or id < 1 or it > 23 or it < 0:
+        return [-1, "不要玩我,算命是严肃的事!"]
+    your_num = fyear(iy) + fmonth(im) + fday(id) + ftime(it)
     return [your_num, pishi[your_num]]
 
 def test():
