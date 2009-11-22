@@ -20,6 +20,10 @@ handlers:
 - url: /javascripts
   static_dir: javascripts
  
+- url: /res/FortuneTeller.wgz
+  static_files: res/FortuneTeller.wgz
+  upload: res/FortuneTeller.wgz
+  mime_type: application/x-nokia-widget
 
 - url: /.*
   script: myApp.py
