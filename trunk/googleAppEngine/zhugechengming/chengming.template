@@ -31,12 +31,12 @@
 		</div>
 		<div id="suan" class="l">
 			<form action="/zhugechengming/cheng" method="GET">
-				<span>输入你的生日：<input type="text" name="y" size="4" value="{{y}}" title="输入年">年
-				<input type="text" name="m" size="2" value="{{m}}"title="输入月">月
-				<input type="text" name="d" size="2" value="{{d}}"title="输入日">日
-				<input type="text" name="t" size="2" value="{{t}}"title="输入时间">点
-                <input type="hidden" name="ny" /><input type="hidden" name="nm" /><input type="hidden" name="nd" />
-				<input type="submit" value="称一称" onclick="suan(this.form)"></span>
+				<span>输入你的生日：<input type="text" name="y" size="4" value="{{y}}" title="输入年" />年
+				<input type="text" name="m" size="2" value="{{m}}"title="输入月" />月
+				<input type="text" name="d" size="2" value="{{d}}"title="输入日" />日
+				<input type="text" name="t" size="2" value="{{t}}"title="输入时间" />点
+                <input type="hidden" name="ny" /> <input type="hidden" name="nm" /><input type="hidden" name="nd" />
+				<input type="submit" value="称一称" onclick="suan(this.form)"/></span>
                 <div id="lunarbirthday">{% if ny %}你的阴历生日是{{ny}}年{{nm}}月{{nd}}日{% endif %}</div>
 			</form>
 			<div id="result" {% if not weight %}class="hide"{% endif %}>
@@ -45,7 +45,7 @@
                 <p>{{shi}}</p>
 			</div>
 		</div>
-		<img src="../images/zhugeliang.jpg" />
+		<img src="../images/zhugeliang.jpg" alt="诸葛亮"/>
 
 		<p id="footer">Power by Google App Engine. CopyRight 2008 - 2010，杨贵堂，<a href="http://www.makenotes.net/">www.makenotes.net</a>。</p>
 <script type="text/javascript">
