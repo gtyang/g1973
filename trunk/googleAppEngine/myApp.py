@@ -41,6 +41,13 @@ class MainPage(webapp.RequestHandler):
 	
 class Guestbook(webapp.RequestHandler):
   def post(self):
+    # 临时性的验证码方案
+    if self.request.get('digital').strip() != '5':
+        self.response.set_status(500)
+        self.response.headers['Content-Type'] = 'text/plain;charset=GBK'
+        self.response.out.write('不认识中国字？ Or you are a robot.')
+        return
+
     greeting = Greeting()
 
     self.request.charset = "GBK"
@@ -114,10 +121,9 @@ class JsonProcessor(webapp.RequestHandler):
 application = webapp.WSGIApplication(
                                      [('/guestbook', MainPage),
                                       ('/sign', Guestbook),
-									  ('/zhugechengming/cheng',ZhugeChengming),
+                                      ('/zhugechengming/cheng',ZhugeChengming),
                                       ('/jsonprocessor',JsonProcessor)],
-                                     debug=True)
-									 
+                                      debug=True)
 def main():
   run_wsgi_app(application)
 
