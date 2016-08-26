@@ -1,17 +1,19 @@
-# coding: gbk
+# coding: utf-8
 import os
+import webapp2
+
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 
-from google.appengine.dist import use_library
-use_library('django', '0.96')
+# from google.appengine.dist import use_library
+# use_library('django', '1.2')
 
 from google.appengine.ext.webapp import template
 
 import cgi
 
 from google.appengine.api import users
-from google.appengine.ext import webapp
-from google.appengine.ext.webapp.util import run_wsgi_app
+# from google.appengine.ext import webapp
+# from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.ext import db
 
 from zhugechengming.ChengMing import chengMing
@@ -21,12 +23,12 @@ class Greeting(db.Model):
   content = db.StringProperty(multiline=True)
   date = db.DateTimeProperty(auto_now_add=True)
 
-class MainPage(webapp.RequestHandler):
+class MainPage(webapp2.RequestHandler):
   def get(self):
     greetings_query = Greeting.all().order('-date')
     greetings = greetings_query.fetch(10)
     for g in greetings:
-        g.content = g.content.encode('GBK')
+        g.content = g.content.encode('utf-8')
 
     if users.get_current_user():
       url = users.create_logout_url(self.request.uri)
@@ -40,22 +42,22 @@ class MainPage(webapp.RequestHandler):
       'url': url,
       'url_linktext': url_linktext,
       }
-    self.response.headers['Content-Type'] = 'text/html;charset=GBK'
+    self.response.headers['Content-Type'] = 'text/html;charset=utf-8'
     path = os.path.join(os.path.dirname(__file__), 'guestbook.template')
     self.response.out.write(template.render(path, template_values))
-	
-class Guestbook(webapp.RequestHandler):
+
+class Guestbook(webapp2.RequestHandler):
   def post(self):
-    # ÁÙÊ±ĞÔµÄÑéÖ¤Âë·½°¸
+    # ä¸´æ—¶æ€§çš„éªŒè¯ç æ–¹æ¡ˆ
     if self.request.get('digital').strip() != '5':
         self.response.set_status(500)
-        self.response.headers['Content-Type'] = 'text/plain;charset=GBK'
-        self.response.out.write('²»ÈÏÊ¶ÖĞ¹ú×Ö£¿ Or you are a robot.')
+        self.response.headers['Content-Type'] = 'text/plain;charset=utf-8'
+        self.response.out.write('ä¸è®¤è¯†ä¸­å›½å­—ï¼Ÿ Or you are a robot.')
         return
 
     greeting = Greeting()
 
-    self.request.charset = "GBK"
+    self.request.charset = "utf-8"
     if users.get_current_user():
       greeting.author = users.get_current_user()
 
@@ -63,7 +65,7 @@ class Guestbook(webapp.RequestHandler):
     greeting.put()
     self.redirect('/guestbook')
 
-class ZhugeChengming(webapp.RequestHandler):
+class ZhugeChengming(webapp2.RequestHandler):
   def get(self):
     y = self.request.get('y')
     m = self.request.get('m')
@@ -89,7 +91,7 @@ class ZhugeChengming(webapp.RequestHandler):
     else:
       template_values = {
        'weight':'',
-       'shi':'‡å£¬ÎÒËã²»³öÄúµÄÃü....ORZ',
+       'shi':'å›§ï¼Œæˆ‘ç®—ä¸å‡ºæ‚¨çš„å‘½....ORZ',
 	   'y':y,
 	   'm':m,
 	   'd':d,
@@ -100,11 +102,11 @@ class ZhugeChengming(webapp.RequestHandler):
        }
 
     path = os.path.join(os.path.dirname(__file__), 'zhugechengming/chengming.template')
-    self.response.headers['Content-Type'] = 'text/html;charset=GBK'
+    self.response.headers['Content-Type'] = 'text/html;charset=utf-8'
     self.response.out.write(template.render(path, template_values))
-	
-	
-class JsonProcessor(webapp.RequestHandler):
+
+
+class JsonProcessor(webapp2.RequestHandler):
     def get(self):
         y = self.request.get('y')
         m = self.request.get('m')
@@ -120,17 +122,19 @@ class JsonProcessor(webapp.RequestHandler):
         # self.response.headers['Content-Type'] = 'text/plain;charset=utf-8'
         self.response.out.write('{\n')
         self.response.out.write('"weight":"' + str(rslt[0]) + '",\n')
-        self.response.out.write('"poem":"' + unicode(rslt[1],"gbk") + '"\n')
+        self.response.out.write('"poem":"' + rslt[1] + '"\n')
         self.response.out.write('}')
 
-application = webapp.WSGIApplication(
-                                     [('/guestbook', MainPage),
-                                      ('/sign', Guestbook),
-                                      ('/zhugechengming/cheng',ZhugeChengming),
-                                      ('/jsonprocessor',JsonProcessor)],
-                                      debug=True)
+app = webapp2.WSGIApplication([('/guestbook', MainPage),
+      ('/sign', Guestbook),
+      ('/zhugechengming/cheng',ZhugeChengming),
+      ('/jsonprocessor',JsonProcessor)],
+      debug=True)
+
+'''
 def main():
   run_wsgi_app(application)
 
 if __name__ == "__main__":
   main()
+'''

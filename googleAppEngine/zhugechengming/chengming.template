@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>ÉñÆæµÄËãÃü·½·¨ - Öî¸ðÁÁ³ÆÃü·¨</title>
-		<meta http-equiv="content-type" content="text/html; charset=GBK" />
+        <title>ç¥žå¥‡çš„ç®—å‘½æ–¹æ³• - è¯¸è‘›äº®ç§°å‘½æ³•</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<link type="text/css" rel="stylesheet" href="../stylesheets/main.css" />
 		<link type="text/css" rel="stylesheet" href="../stylesheets/chengming.css" />
 		<script type="text/javascript" src="../javascripts/lunar.js"></script>
@@ -10,7 +10,7 @@
 			function suan(form){
 				var lunar = new Lunar(new Date(form["y"].value,form["m"].value - 1,form["d"].value));
                 var objDispLunar = document.getElementById("lunarbirthday");
-                objDispLunar.innerHTML = "ÄãµÄÒõÀúÉúÈÕÊÇ" + lunar.year + "Äê" + lunar.month + "ÔÂ" + lunar.day + "ÈÕ";
+                objDispLunar.innerHTML = "ä½ çš„é˜´åŽ†ç”Ÿæ—¥æ˜¯" + lunar.year + "å¹´" + lunar.month + "æœˆ" + lunar.day + "æ—¥";
                 form["ny"].value = lunar.year;
                 form["nm"].value = lunar.month;
                 form["nd"].value = lunar.day;
@@ -21,36 +21,36 @@
     </head>
     <body>
 		<div>
-			<p><a href="/">Ê×Ò³</a>|<a href="/guestbook">guest book</a>|<a href="/zhugechengming/cheng">Öî¸ðÁÁ³ÆÃü·¨</a>|<a href="http://www.maweiluo.com/">ÂíÎ²ÂÞ</a>£ü<a href="http://shixizhi.net">Ê±Ï°Ö®</a></p>
+			<p><a href="/">é¦–é¡µ</a>|<a href="/guestbook">guest book</a>|<a href="/zhugechengming/cheng">è¯¸è‘›äº®ç§°å‘½æ³•</a>|<a href="http://www.maweiluo.com/">é©¬å°¾ç½—</a>ï½œ<a href="http://shixizhi.net">æ—¶ä¹ ä¹‹</a></p>
 		</div>
-        <h1>ÉñÆæµÄËãÃü·½·¨ - Öî¸ðÁÁ³ÆÃü·¨</h1>
+        <h1>ç¥žå¥‡çš„ç®—å‘½æ–¹æ³• - è¯¸è‘›äº®ç§°å‘½æ³•</h1>
 		<div>
-			<p>Öî¸ðÁÁ¸ù¾Ý¡¶Ò×¾­¡·Èý°Ù°ËËÄØ³£¬Ëù±àÐ´ÁËÇ©Ê«£¬ÇÉÃîµØ×é³É×ÖÅÌ¹©ÈË²·Ëã¡£ÕâÖÖ<a href="/">ËãÃü·½·¨</a>ÆäÄÚÈÝÉñÃØ¶ø²»¿ÉË¼Òé£¬Ð¡ÖÁ¸öÈËÈÙÈè£¬¼ÒÍ¥µÃÊ§£¬´óÖÁÕ½ÒÛÊ¤¸º£¬°î¹úÈÙË¥£¬ÎÞ²»ÁéÑéÈçÉñ¡£Òò´ËÃûÉù´óÕð£¬´ú´úÏàÏ®¡£Ã÷´úºó£¬¸ÃÊé±»¸üÃûÎª¡¶Öî¸ðÉñÞ´¡·¡£</p>
-			<p>ÊäÈëÄãµÄ³öÉúÈÕÆÚ£¬¸ù¾ÝÖî¸ðÁÁÅ»ÐÄÁ¤ÑªÑÐ¾¿³öµÄÔË³ï¹æÔò£¬¿ÉÒÔ³Æ³öÄãµÄ¡°Ãü¡±µÄÖØÁ¿£¬²¢ÓÐÏàÓ¦µÄÇ©Ê«¡£</p>
-			<p>½ö¹©ÓéÀÖ£¬Èç¹û²»ÀíÏë²»±ØÌ«ÔÚÒâ¡£Èý·ÖÌì×¢¶¨£¬Æß·Ö¿¿´òÆ´£¡</p>
+			<p>è¯¸è‘›äº®æ ¹æ®ã€Šæ˜“ç»ã€‹ä¸‰ç™¾å…«å››çˆ»ï¼Œæ‰€ç¼–å†™äº†ç­¾è¯—ï¼Œå·§å¦™åœ°ç»„æˆå­—ç›˜ä¾›äººåœç®—ã€‚è¿™ç§<a href="/">ç®—å‘½æ–¹æ³•</a>å…¶å†…å®¹ç¥žç§˜è€Œä¸å¯æ€è®®ï¼Œå°è‡³ä¸ªäººè£è¾±ï¼Œå®¶åº­å¾—å¤±ï¼Œå¤§è‡³æˆ˜å½¹èƒœè´Ÿï¼Œé‚¦å›½è£è¡°ï¼Œæ— ä¸çµéªŒå¦‚ç¥žã€‚å› æ­¤åå£°å¤§éœ‡ï¼Œä»£ä»£ç›¸è¢­ã€‚æ˜Žä»£åŽï¼Œè¯¥ä¹¦è¢«æ›´åä¸ºã€Šè¯¸è‘›ç¥žè–®ã€‹ã€‚</p>
+			<p>è¾“å…¥ä½ çš„å‡ºç”Ÿæ—¥æœŸï¼Œæ ¹æ®è¯¸è‘›äº®å‘•å¿ƒæ²¥è¡€ç ”ç©¶å‡ºçš„è¿ç­¹è§„åˆ™ï¼Œå¯ä»¥ç§°å‡ºä½ çš„â€œå‘½â€çš„é‡é‡ï¼Œå¹¶æœ‰ç›¸åº”çš„ç­¾è¯—ã€‚</p>
+			<p>ä»…ä¾›å¨±ä¹ï¼Œå¦‚æžœä¸ç†æƒ³ä¸å¿…å¤ªåœ¨æ„ã€‚ä¸‰åˆ†å¤©æ³¨å®šï¼Œä¸ƒåˆ†é æ‰“æ‹¼ï¼</p>
 		</div>
 		<div id="suan" class="l">
 			<form action="/zhugechengming/cheng" method="GET">
-				<span>ÊäÈëÄãµÄÉúÈÕ£º<input type="text" name="y" size="4" value="{{y}}" title="ÊäÈëÄê" />Äê
-				<input type="text" name="m" size="2" value="{{m}}"title="ÊäÈëÔÂ" />ÔÂ
-				<input type="text" name="d" size="2" value="{{d}}"title="ÊäÈëÈÕ" />ÈÕ
-				<input type="text" name="t" size="2" value="{{t}}"title="ÊäÈëÊ±¼ä" />µã
+				<span>è¾“å…¥ä½ çš„ç”Ÿæ—¥ï¼š<input type="text" name="y" size="4" value="{{y}}" title="è¾“å…¥å¹´" />å¹´
+				<input type="text" name="m" size="2" value="{{m}}"title="è¾“å…¥æœˆ" />æœˆ
+				<input type="text" name="d" size="2" value="{{d}}"title="è¾“å…¥æ—¥" />æ—¥
+				<input type="text" name="t" size="2" value="{{t}}"title="è¾“å…¥æ—¶é—´" />ç‚¹
                 <input type="hidden" name="ny" /> <input type="hidden" name="nm" /><input type="hidden" name="nd" />
-				<input type="submit" value="³ÆÒ»³Æ" onclick="suan(this.form)"/></span>
-                <div id="lunarbirthday">{% if ny %}ÄãµÄÒõÀúÉúÈÕÊÇ{{ny}}Äê{{nm}}ÔÂ{{nd}}ÈÕ{% endif %}</div>
+				<input type="submit" value="ç§°ä¸€ç§°" onclick="suan(this.form)"/></span>
+                <div id="lunarbirthday">{% if ny %}ä½ çš„é˜´åŽ†ç”Ÿæ—¥æ˜¯{{ny}}å¹´{{nm}}æœˆ{{nd}}æ—¥{% endif %}</div>
 			</form>
 			<div id="result" {% if not weight %}class="hide"{% endif %}>
-                <p>ÄãµÄÃüÖØ:{{weight}}Ç®</p>
-                <p>Ê«Ô»£º</p>
+                <p>ä½ çš„å‘½é‡:{{weight}}é’±</p>
+                <p>è¯—æ›°ï¼š</p>
                 <p>{{shi}}</p>
 			</div>
 		</div>
-		<img src="../images/zhugeliang.jpg" alt="Öî¸ðÁÁ"/>
+		<img src="../images/zhugeliang.jpg" alt="è¯¸è‘›äº®"/>
 
 <div class="r">
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-8995377412503046";
-/* 234X60°ëºá·ùÎÄ×Ö */
+/* 234X60åŠæ¨ªå¹…æ–‡å­— */
 google_ad_slot = "7844919839";
 google_ad_width = 234;
 google_ad_height = 60;
@@ -79,7 +79,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   src="http://pagead2.googlesyndication.com/pagead/show_sdo.js">
 </script>
 
-		<p id="footer">Power by Google App Engine. CopyRight 2008 - 2010£¬Ñî¹óÌÃ£¬<a href="http://www.makenotes.net/">www.makenotes.net</a>¡£</p>
+		<p id="footer">Power by Google App Engine. CopyRight 2008 - 2010ï¼Œæ¨è´µå ‚ï¼Œ<a href="http://www.makenotes.net/">www.makenotes.net</a>ã€‚</p>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

@@ -1,16 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>ÁôÑÔ²¾</title>
-        <meta name="description" content="»ùÓÚApp engineÀı×Ó³ÌĞòÊéĞ´µÄÒ»¸öÁôÑÔ²¾£¬»¶Ó­´ó¼ÒÁôÏÂ×ã¼£ºÍÆÀÂÛ" />
+        <title>ç•™è¨€ç°¿</title>
+        <meta name="description" content="åŸºäºApp engineä¾‹å­ç¨‹åºä¹¦å†™çš„ä¸€ä¸ªç•™è¨€ç°¿ï¼Œæ¬¢è¿å¤§å®¶ç•™ä¸‹è¶³è¿¹å’Œè¯„è®º" />
         <link type="text/css" rel="stylesheet" href="stylesheets/main.css" />
         <style>
             .commenttext{border:1px dotted;padding:10px;}
         </style>
     </head>
     <body>
-        <p><a href="/">Ê×Ò³</a>|<a href="/guestbook">guest book</a>|<a href="/zhugechengming/cheng">Öî¸ğÁÁ³ÆÃü·¨</a>|<a href="http://www.maweiluo.com/">ÂíÎ²ÂŞ</a>£ü<a href="http://shixizhi.net">Ê±Ï°Ö®</a></p>
-        <h1>±ö¿ÍÁôÑÔ²¾</h1>
+        <p><a href="/">é¦–é¡µ</a>|<a href="/guestbook">guest book</a>|<a href="/zhugechengming/cheng">è¯¸è‘›äº®ç§°å‘½æ³•</a>|<a href="http://www.maweiluo.com/">é©¬å°¾ç½—</a>ï½œ<a href="http://shixizhi.net">æ—¶ä¹ ä¹‹</a></p>
+        <h1>å®¾å®¢ç•™è¨€ç°¿</h1>
         <div>
 	{% for greeting in greetings %}
             <div>
@@ -25,7 +25,7 @@
 
             <form action="/sign" method="post">
                 <textarea name="content" rows="3" cols="60"></textarea>
-                <div>ÇëÊäÈëÖĞÎÄÎå¶ÔÓ¦µÄ°¢À­²®Êı×Ö£º<input type="text" name="digital" value="" /></div>
+                <div>è¯·è¾“å…¥ä¸­æ–‡äº”å¯¹åº”çš„é˜¿æ‹‰ä¼¯æ•°å­—ï¼š<input type="text" name="digital" value="" /></div>
                 <div><input type="submit" value="Sign Guestbook"/></div>
                 <a href="{{ url }}">{{ url_linktext }}</a>
             </form>
@@ -49,7 +49,7 @@
                 src="http://pagead2.googlesyndication.com/pagead/show_sdo.js">
         </script>
 
-        <p id="footer">Power by Google App Engine. CopyRight 2008 - 2010£¬Ñî¹óÌÃ¡£</p>
+        <p id="footer">Power by Google App Engine. CopyRight 2008 - 2010ï¼Œæ¨è´µå ‚ã€‚</p>
         <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

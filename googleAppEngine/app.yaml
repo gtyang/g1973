@@ -1,12 +1,20 @@
 application: gui-cn-hrd
 version: 3
-runtime: python
+runtime: python27
 api_version: 1
+threadsafe: true
+
+libraries:
+- name: django
+  version: "1.5"
+
+builtins:
+- django_wsgi: on
 
 handlers:
 - url: /((characterIssue)|(DevNotes)).html
-  script: redirect.py
-  
+  script: redirect.application
+
 - url: /
   static_files: index.html
   upload: index.html
@@ -16,14 +24,14 @@ handlers:
 
 - url: /images
   static_dir: images
-  
+
 - url: /javascripts
   static_dir: javascripts
- 
+
 - url: /res/FortuneTeller.wgz
   static_files: res/FortuneTeller.wgz
   upload: res/FortuneTeller.wgz
   mime_type: application/x-nokia-widget
 
 - url: /.*
-  script: myApp.py
+  script: myApp.app
